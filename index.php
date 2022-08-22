@@ -14,13 +14,15 @@ function getUrl($title, $artist)
     curl_close($resource);
     $json_data = json_decode($curlResult,true);
     $resultCount = $json_data['resultCount'];
-    echo $curlCode . " - " . $json_data['results']['0']['artworkUrl100'] . " results: " . $resultCount;
     if($curlCode >= 200 && $curlCode < 300 && $resultCount == 1){
+        echo "<br>" . $curlCode . " - " . $json_data['results']['0']['artworkUrl100'] . " results: " . $resultCount;
         return $json_data['results']['0']['artworkUrl100'];
     }
     return $logo;
 }
 
-echo "<br><img src=" . getUrl("Zukunft", "Raf Camora") . ">"
+echo "<br><img src=" . getUrl("Zukunft", "Raf Camora") . ">";
+echo "<br><img src=" . getUrl("Zinit", "Raf Camora") . ">";
+echo "<br><img src=" . getUrl("Blaues Licht", "Raf Camora") . ">";
 
 ?>
