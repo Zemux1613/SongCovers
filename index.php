@@ -1,12 +1,10 @@
 <?php
 
-$logo = "https://cdn.happyfm.eu/logos/logo-transparent.png";
-
 function getUrl($title, $artist)
 {
     $resource = curl_init();
     $apiUrl = "https://itunes.apple.com/search?term=" . urlencode($artist) . "-" . urlencode($title) . "&media=music&limit=1";
-    global $logo;
+    $logo = "https://cdn.happyfm.eu/logos/logo-transparent.png";
     curl_setopt($resource, CURLOPT_URL, $apiUrl);
     curl_setopt($resource, CURLOPT_RETURNTRANSFER, 1);
     $curlResult = curl_exec($resource);
