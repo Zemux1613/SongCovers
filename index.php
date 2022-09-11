@@ -1,5 +1,4 @@
 <?php
-
 function getUrl($title, $artist)
 {
     $resource = curl_init();
@@ -18,9 +17,4 @@ function getUrl($title, $artist)
     }
     return $logo;
 }
-
-echo "<br><img src=" . getUrl("Zukunft", "Raf Camora") . ">";
-echo "<br><img src=" . getUrl("Zinit", "Raf Camora") . ">";
-echo "<br><img src=" . getUrl("Blaues Licht", "Raf Camora") . ">";
-
 ?>
